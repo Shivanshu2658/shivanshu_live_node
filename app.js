@@ -15,7 +15,7 @@ const app = express();
 app.use('/api/v1/user', userRoutes);
 
 app.get("/",(req,res) =>{
-    res.status(200).send("ihfaisdfguhiasdhia")
+    res.status(200).send("Checking the first deployment")
 });
 
 
