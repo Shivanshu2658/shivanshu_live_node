@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "shivanshu_live",
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ]
+}
