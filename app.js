@@ -6,7 +6,7 @@ env.config();
 const app = express();
 
 app.get("/",(req,res) =>{
-    res.status(200).send("Check this")
+    res.status(200).send("Checkdafnshioh this")
 });
 
 app.listen(process.env.PORT || 4500, () =>{
