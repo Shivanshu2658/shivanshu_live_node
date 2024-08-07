@@ -2,6 +2,7 @@ const express = require("express");
 const env = require("dotenv");
 const mongoConnet = require("./config/db");
 const authRoutes  = require("./routes/authRoutes");
+const chatRoutes  = require("./routes/chatRoutes");
 
 env.config();
 
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json())
 
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/chat', chatRoutes);
 
 app.get("/",(req,res) =>{
     res.status(200).send("Checking the first deployment")
