@@ -32,11 +32,18 @@ router.get("/getAllConnectedUser",requireSignIn, async (req, res) => {
                 msg: "No Users found!",
             })
         }
-        console.log(users);
+        console.log("Before loop");
+        const connectedUserIDList = users.connectedUser;
+        let connectedUserDataList = [];
+        for(let i=0;i<connectedUserIDList.length;i++){
+            console.log("safgh loop");
+
+            connectedUserDataList.push(await User.findById(connectedUserIDList[i]).select('-connectedUser').select('-password'));
+        }
         res.status(200).json({
             success: true,
             msg: "User found",
-            connectedUsers : users.connectedUser
+            connectedUsers : connectedUserDataList
         })
     }
     catch (err) {

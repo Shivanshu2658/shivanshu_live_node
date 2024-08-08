@@ -19,5 +19,4 @@ router.post("/getUserChats", [
 ], requireSignIn, getUserChatsController);
 
 
-
 module.exports = router;
