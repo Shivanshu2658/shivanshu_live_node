@@ -25,13 +25,14 @@ router.post('/login', [
 
 router.get("/getAllConnectedUser",requireSignIn, async (req, res) => {
     try {
-        const users = (await User.find());
+        const users = await User.findById(req.user.id);
         if (!users) {
             return res.status(400).json({
                 success: false,
                 msg: "No Users found!",
             })
         }
+        console.log(users);
         res.status(200).json({
             success: true,
             msg: "User found",
