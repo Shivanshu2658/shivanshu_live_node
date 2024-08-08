@@ -49,7 +49,7 @@ router.get("/getAllConnectedUser",requireSignIn, async (req, res) => {
 
 router.get("/getAllUser",requireSignIn, async (req, res) => {
     try {
-        const users = (await User.find({ _id: {$ne : req.user.id}}));
+        const users = (await User.find({ _id: {$ne : req.user.id}}).select('-password').select('-connectedUser'));
         if (!users) {
             return res.status(400).json({
                 success: false,

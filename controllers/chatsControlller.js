@@ -55,7 +55,7 @@ const sendChatController  =  async(req,res) => {
 
         const chats = await Chat.create ({
             senderReceiver : sender_receiver,
-            receiverSender : receiver_sender,
+            // receiverSender : receiver_sender,
             senderId : senderId,
             receiverId : receiverId,
             message : message

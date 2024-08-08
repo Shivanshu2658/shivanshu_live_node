@@ -4,10 +4,10 @@ const chatSchema = new mongoose.Schema({
         type : String,
         require: true
     },
-    receiverSender : {
-        type : String,
-        require: true
-    },
+    // receiverSender : {
+    //     type : String,
+    //     require: true
+    // },
     senderId : {
         type : String,
         required: true
