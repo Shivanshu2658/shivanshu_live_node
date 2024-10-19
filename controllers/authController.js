@@ -63,6 +63,8 @@ const userLoginController = async (req, res) => {
             })
         }
         const { email, password } = req.body;
+        // let user = await User.findOne({email});
+        
         let user = await User.findOne({email});
 
         if(!user) {
@@ -73,12 +75,13 @@ const userLoginController = async (req, res) => {
             });
         }
 
+
         const comparePassword = await bcrypt.compare(password, user.password);
 
         if(!comparePassword){
             return res.status(400).json({
                 success : false,
-                msg : "Invalid crezzzzzzdentials"
+                msg : "Invalid credentials"
             })
         }
         const data = {
