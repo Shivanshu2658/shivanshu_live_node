@@ -78,7 +78,7 @@ const userLoginController = async (req, res) => {
         if(!comparePassword){
             return res.status(400).json({
                 success : false,
-                msg : "Invalid credentials"
+                msg : "Invalid crezzzzzzdentials"
             })
         }
         const data = {
